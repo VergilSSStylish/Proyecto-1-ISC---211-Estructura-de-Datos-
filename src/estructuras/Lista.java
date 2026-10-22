@@ -24,7 +24,7 @@ public class Lista<T> {
     }
 
 
-    public int primero(){return 1;}
+    public int PRIMERO(){return 1;}
     public int fin(){return tamaño+1;}
 
     //esta funcion sirve si el arreglo esta lleno, entonces que automaticamente lo haga
@@ -84,8 +84,8 @@ public class Lista<T> {
     }
 
     //METODO DE CLASE
-    public void inserta(T elemento, int posicion) throws RangoInvalidoException{
-        if (posicion > fin() || posicion < primero()) {
+    public void INSERTA(T elemento, int posicion) throws RangoInvalidoException{
+        if (posicion > fin() || posicion < PRIMERO()) {
             throw new RangoInvalidoException("Posicion "+ posicion +" invalida. No se pudo insertar.");
         }
 
@@ -113,7 +113,7 @@ public class Lista<T> {
     }
 
     //METODO DE CLASE
-    public void suprime(int posicion) throws RangoInvalidoException{
+    public void SUPRIME(int posicion) throws RangoInvalidoException{
 
         if (posicion <= 0 || posicion > tamaño) {
             throw new RangoInvalidoException("Posicion " + posicion + " fuera del tamaño " + tamaño
@@ -150,7 +150,7 @@ public class Lista<T> {
     }
 
     //METODO DE CLASE
-    public int localiza(T elemento){
+    public int LOCALIZA(T elemento){
         int actual = cabeza;
 
         for(int i=1; i<=tamaño; i++){
@@ -179,7 +179,7 @@ public class Lista<T> {
     }
 
     //METODO DE CLASE
-    boolean Vacia(){
+    boolean VACIA(){
         if(cabeza == -1){
             return true;
         }else {
@@ -188,8 +188,8 @@ public class Lista<T> {
     }
 
     //METODO DE CLASE
-    void Anula(){
-        if(Vacia()){
+    void ANULA(){
+        if(VACIA()){
             System.out.println("Lista se encontraba previamente vacia");
         }
 
@@ -205,7 +205,7 @@ public class Lista<T> {
     }
 
     //METODO DE CLASE
-    public T Recupera(int posicion) throws RangoInvalidoException{
+    public T RECUPERA(int posicion) throws RangoInvalidoException{
     if(posicion < 1 || posicion > tamaño){
         throw new RangoInvalidoException("Posicion " + posicion + " invalida" );
     }
@@ -218,7 +218,7 @@ public class Lista<T> {
 
     //METODO DE CLASE
 
-    public int Anterior(int posicion) throws RangoInvalidoException{
+    public int ANTERIOR(int posicion) throws RangoInvalidoException{
         if(posicion < 1 || posicion > tamaño){
             throw new RangoInvalidoException("Posicion " + posicion + " invalida" );
         }
@@ -226,7 +226,7 @@ public class Lista<T> {
     }
 
     //METODO DE CLASE
-    public int Siguiente(int posicion) throws RangoInvalidoException {
+    public int SIGUIENTE(int posicion) throws RangoInvalidoException {
         if (posicion < 1 || posicion > tamaño) {
             throw new RangoInvalidoException("Posicion " + posicion + " invalida");
         }

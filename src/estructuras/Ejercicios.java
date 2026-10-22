@@ -10,12 +10,12 @@ public class Ejercicios {
 
         // Pasa todos los elementos de la lista a la pila         
         for (int i = 1; i <= n; i++) {
-            pilaAuxiliar.Mete(listaOriginal.Recupera(i));
+            pilaAuxiliar.METE(listaOriginal.RECUPERA(i));
         }
 
         // 2. Sacamos de la pila y los insertamos en la nueva lista
-        while (!pilaAuxiliar.estaVacia()) {
-            listaInvertida.inserta(pilaAuxiliar.Saca(), listaInvertida.fin());
+        while (!pilaAuxiliar.VACIA()) {
+            listaInvertida.INSERTA(pilaAuxiliar.SACA(), listaInvertida.fin());
         }
 
         return listaInvertida;
@@ -39,15 +39,15 @@ public class Ejercicios {
             // Llena la lista y la pila con los caracteres
             for (int i = 0; i < longitud; i++) {
                 char c = limpio.charAt(i);
-                listaCaracteres.inserta(c, listaCaracteres.fin());
-                pilaCaracteres.Mete(c);
+                listaCaracteres.INSERTA(c, listaCaracteres.fin());
+                pilaCaracteres.METE(c);
             }
 
             // Compara elemento por elemento
             // La lista mantiene el orden original, la pila devuelve el orden invertido.
             for (int i = 1; i <= longitud; i++) {
-                char charLista = listaCaracteres.Recupera(i);
-                char charPila = pilaCaracteres.Saca();
+                char charLista = listaCaracteres.RECUPERA(i);
+                char charPila = pilaCaracteres.SACA();
 
                 if (charLista != charPila) {
                     return false;
@@ -68,16 +68,16 @@ public class Ejercicios {
         Lista<String> bitacoraLista = new Lista<>();
 
         // quita de la cola y las ingresa en la pila
-        while (!colaAproximacion.Vacio()) {
-            String avion = colaAproximacion.Frente();
-            colaAproximacion.QuitaDeCola();
-            pilaPlataforma.Mete(avion);
+        while (!colaAproximacion.VACIO()) {
+            String avion = colaAproximacion.FRENTE();
+            colaAproximacion.QUITA_DE_COLA();
+            pilaPlataforma.METE(avion);
         }
 
         // Se ingresan en la lista que funciona como bitacora
-        while (!pilaPlataforma.estaVacia()) {
-            String avionDespachado = pilaPlataforma.Saca();
-            bitacoraLista.inserta(avionDespachado, bitacoraLista.fin());
+        while (!pilaPlataforma.VACIA()) {
+            String avionDespachado = pilaPlataforma.SACA();
+            bitacoraLista.INSERTA(avionDespachado, bitacoraLista.fin());
         }
 
         return bitacoraLista;

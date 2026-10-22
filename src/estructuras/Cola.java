@@ -10,31 +10,31 @@ public class Cola <T> {
 
     // METODOS DE LA CLASE
     public void Anula(){
-        listaInterna.Anula();
+        listaInterna.ANULA();
     }
 
-    public boolean Vacio(){
-        if(listaInterna.Vacia()){
+    public boolean VACIO(){
+        if(listaInterna.VACIA()){
             return true;
         }
         return false;
     }
 
-    public T Frente() throws RangoInvalidoException{
-        if(Vacio()){
+    public T FRENTE() throws RangoInvalidoException{
+        if(VACIO()){
             throw new RangoInvalidoException("La cola esta vacia");
         }
-        return listaInterna.Recupera(listaInterna.primero());
+        return listaInterna.RECUPERA(listaInterna.PRIMERO());
     }
 
-    public void PoneEnCola(T elemento) throws RangoInvalidoException {
-        listaInterna.inserta(elemento, listaInterna.fin());
+    public void PONE_EN_COLA(T elemento) throws RangoInvalidoException {
+        listaInterna.INSERTA(elemento, listaInterna.fin());
     }
 
-    public void QuitaDeCola() throws RangoInvalidoException{
-        if(Vacio()){
+    public void QUITA_DE_COLA() throws RangoInvalidoException{
+        if(VACIO()){
             throw new RangoInvalidoException("Cola vacia, no existe elemento a quita");
         }
-        listaInterna.suprime(listaInterna.primero());
+        listaInterna.SUPRIME(listaInterna.PRIMERO());
     }
 }

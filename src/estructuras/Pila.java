@@ -47,7 +47,7 @@ public class Pila<T>{
     }
     
 
-    public void anula(){
+    public void ANULA(){
        cima = -1;
        tamano = 0;
        cursor = 0;
@@ -56,15 +56,15 @@ public class Pila<T>{
        memoria[max-1] = new Nodo<T>(null, -1);
     }
 
-   public T Tope() throws EmptyStackException {
-        if (estaVacia()) {
+   public T TOPE() throws EmptyStackException {
+        if (VACIA()) {
             throw new EmptyStackException();
         }
         return memoria[cima].getDato();
     }
 
-    public T Saca() throws EmptyStackException {
-        if (estaVacia()) {
+    public T SACA() throws EmptyStackException {
+        if (VACIA()) {
             throw new EmptyStackException();
         }
         
@@ -81,7 +81,7 @@ public class Pila<T>{
         return datoRemovido;
     }
 
-    public void Mete(T dato)  {
+    public void METE(T dato)  {
         if (cursor == -1) {
            ajustarMemoria();
         }
@@ -95,7 +95,7 @@ public class Pila<T>{
         tamano++;
     }
 
-    public boolean estaVacia(){
+    public boolean VACIA(){
         return cima == -1;
     }
 
