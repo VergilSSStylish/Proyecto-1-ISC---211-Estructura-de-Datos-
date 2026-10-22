@@ -1,4 +1,4 @@
-package src.estructuras;
+package estructuras;
 
 public class Cola <T> {
     private Lista<T> listaInterna;
@@ -7,6 +7,8 @@ public class Cola <T> {
         listaInterna = new Lista<>();
     }
 
+
+    // METODOS DE LA CLASE
     public void Anula(){
         listaInterna.Anula();
     }

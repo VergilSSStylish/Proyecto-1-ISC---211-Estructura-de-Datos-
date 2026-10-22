@@ -9,7 +9,8 @@ public class Pila<T>{
 
 @SuppressWarnings("unchecked")
 
-    public Pila(int max){
+    public Pila(){
+    int max = 10;
        memoria = (Nodo<T>[]) new Nodo[max];
        cima = -1;
        cursor = 0;

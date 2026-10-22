@@ -1,4 +1,4 @@
-package src.estructuras;
+package estructuras;
 
 public class RangoInvalidoException extends Exception{
 

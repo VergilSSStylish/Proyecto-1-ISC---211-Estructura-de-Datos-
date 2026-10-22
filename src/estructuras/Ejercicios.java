@@ -1,11 +1,11 @@
-package src.estructuras;
+package estructuras;
 
 public class Ejercicios {
 
     //ejercicio de invertir
     public static <T> Lista<T> invertirLista(Lista<T> listaOriginal) throws RangoInvalidoException, ListaLlenaException {
         int n = listaOriginal.fin() - 1; // Tamaño actual lógico
-        Pila<T> pilaAuxiliar = new Pila<>(n > 0 ? n : 1);
+        Pila<T> pilaAuxiliar = new Pila<>();
         Lista<T> listaInvertida = new Lista<>();
 
         // Pasa todos los elementos de la lista a la pila         
@@ -34,7 +34,7 @@ public class Ejercicios {
 
         try {
             Lista<Character> listaCaracteres = new Lista<>();
-            Pila<Character> pilaCaracteres = new Pila<>(longitud);
+            Pila<Character> pilaCaracteres = new Pila<>();
 
             // Llena la lista y la pila con los caracteres
             for (int i = 0; i < longitud; i++) {
@@ -64,7 +64,7 @@ public class Ejercicios {
     }
     // Control de Tráfico Aéreo 
     public static Lista<String> procesarControlAereo(Cola<String> colaAproximacion, int capacidad) throws Exception {
-        Pila<String> pilaPlataforma = new Pila<>(capacidad);
+        Pila<String> pilaPlataforma = new Pila<>();
         Lista<String> bitacoraLista = new Lista<>();
 
         // quita de la cola y las ingresa en la pila
