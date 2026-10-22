@@ -1,4 +1,4 @@
-package src.estructuras;
+package estructuras;
 import java.util.EmptyStackException;
 
 public class Pila<T>{
@@ -19,6 +19,31 @@ public class Pila<T>{
        memoria[max-1] = new Nodo<T>(null, -1);
     }
 
+    private void ajustarMemoria(){
+        int tamañoViejo = memoria.length;
+        int nuevoTamaño = tamañoViejo *2;
+        Nodo<T>[] nuevaMemoria = (Nodo<T>[]) new Nodo[nuevoTamaño];
+
+        for(int i=0; i<tamañoViejo; i++){
+            nuevaMemoria[i] = memoria[i];
+        }
+
+        for (int i = tamañoViejo; i < nuevoTamaño - 1; i++) {
+            nuevaMemoria[i] = new Nodo<>(null, i + 1);
+        }
+        nuevaMemoria[nuevoTamaño - 1] = new Nodo<>(null, -1);
+
+        if (cursor ==-1) {
+            cursor = tamañoViejo;
+        }else{
+            int ultimoNodo = nuevoTamaño-1;
+            nuevaMemoria[ultimoNodo].setSiguiente(cursor);
+            cursor = tamañoViejo;
+        }
+
+        memoria = nuevaMemoria;
+
+    }
     
 
     public void anula(){
@@ -55,9 +80,9 @@ public class Pila<T>{
         return datoRemovido;
     }
 
-    public void Mete(T dato) throws ListaLlenaException {
+    public void Mete(T dato)  {
         if (cursor == -1) {
-            throw new ListaLlenaException("Pila llena. No se pudo insertar el elemento.");
+           ajustarMemoria();
         }
         
         int posLibre = cursor;
