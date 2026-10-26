@@ -169,7 +169,7 @@ public class Lista<T> {
     public void listar(){
         int actual = cabeza;
 
-        System.out.print("Lista: [ ");
+        System.out.print("[ ");
         while (actual != -1) {
             System.out.print(memoria[actual] + ", ");
             actual = memoria[actual].getSiguiente();
@@ -219,7 +219,7 @@ public class Lista<T> {
     //METODO DE CLASE
 
     public int ANTERIOR(int posicion) throws RangoInvalidoException{
-        if(posicion < 1 || posicion > tamaño){
+        if(posicion <= 1 || posicion > tamaño){
             throw new RangoInvalidoException("Posicion " + posicion + " invalida" );
         }
         return (posicion -1);
