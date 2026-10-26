@@ -103,5 +103,18 @@ public class Pila<T>{
         return tamano;
     }
 
+    public void listar() throws RangoInvalidoException{
+        Lista <T> lista = new Lista<>();
+       for(int i = 0; !VACIA(); i++){
+           lista.INSERTA(TOPE(), lista.PRIMERO());
+           SACA();
+        }
+       lista.listar();
+       while(!lista.VACIA()){
+           METE(lista.RECUPERA(lista.PRIMERO()));
+           lista.SUPRIME(lista.PRIMERO());
+       }
+    }
+
 }
 

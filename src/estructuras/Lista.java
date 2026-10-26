@@ -174,7 +174,7 @@ public class Lista<T> {
             System.out.print(memoria[actual] + ", ");
             actual = memoria[actual].getSiguiente();
         }
-        System.out.println("]");
+        System.out.println("]\n");
 
     }
 

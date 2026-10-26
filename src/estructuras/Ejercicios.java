@@ -69,9 +69,11 @@ public class Ejercicios {
             String avion = colaAproximacion.FRENTE();
             colaAproximacion.QUITA_DE_COLA();
             pilaPlataforma.METE(avion);
-            System.out.println("> " + avion + " ha sido registrado exitosamente.");
+            System.out.print("> " + avion + " ha sido registrado exitosamente.\n");
+            pilaPlataforma.listar();
+            Thread.sleep(1000);
         } else {
-            System.out.println("No hay más aviones en la cola de aproximación.");
+            System.out.print("No hay más aviones en la cola de aproximación.");
         }
     }
 
