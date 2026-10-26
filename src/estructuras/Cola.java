@@ -9,7 +9,7 @@ public class Cola <T> {
 
 
     // METODOS DE LA CLASE
-    public void Anula(){
+    public void ANULA(){
         listaInterna.ANULA();
     }
 

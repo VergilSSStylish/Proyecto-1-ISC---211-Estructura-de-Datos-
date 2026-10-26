@@ -25,11 +25,11 @@ public class Main {
             System.out.println("\n Prueba Palíndromos");
             String palabra1 = "reconocer";
             String palabra2 = "programacion";
-            String frase3 = "anita lava la tina";
+            String palabra3 = "ana";
 
             System.out.println("¿Es '" + palabra1 + "' palíndromo? -> " + Ejercicios.esPalindromo(palabra1));
             System.out.println("¿Es '" + palabra2 + "' palíndromo? -> " + Ejercicios.esPalindromo(palabra2));
-            System.out.println("¿Es '" + frase3 + "' palíndromo? -> " + Ejercicios.esPalindromo(frase3));
+            System.out.println("¿Es '" + palabra3 + "' palíndromo? -> " + Ejercicios.esPalindromo(palabra3));
 
             //COLA
             System.out.println("\n Prueba Cola ");
@@ -41,22 +41,28 @@ public class Main {
             System.out.println("Frente de la cola: " + miCola.FRENTE()); // 10
             miCola.QUITA_DE_COLA();
             System.out.println("Nuevo frente tras quitar: " + miCola.FRENTE()); // 20
-            
-            System.out.println("\nPrueba ejercicio a presentar registro de aviones ");
-            // Control
+
+
+
+            //ejercicio de control
+            System.out.println("\nEjercicio examen \n");
             Cola<String> colaVuelos = new Cola<>();
-            
-            // Insertamos elementos en la cola
+            Pila<String> plataformaAviones = new Pila<>();
+
             colaVuelos.PONE_EN_COLA("Vuelo IB-6301");
             colaVuelos.PONE_EN_COLA("Vuelo AA-940");
             colaVuelos.PONE_EN_COLA("Vuelo CM-212");
 
-            System.out.println("\nVuelo en aproximación: " + colaVuelos.FRENTE());
+            Ejercicios.registrarAvionPlataforma(colaVuelos, plataformaAviones);
 
-            // aqui mostramos los aviones que vienen ingresando
-            Lista<String> bitacoraAterrizajes = Ejercicios.procesarControlAereo(colaVuelos, 3);
 
-            System.out.print("Bitácora final de aterrizajes en Lista: ");
+            Ejercicios.registrarAvionPlataforma(colaVuelos, plataformaAviones);
+
+            Ejercicios.registrarAvionPlataforma(colaVuelos, plataformaAviones);
+
+            Lista<String> bitacoraAterrizajes = Ejercicios.generarBitacora(plataformaAviones);
+
+            System.out.print("\nBitácora actual: \n");
             bitacoraAterrizajes.listar();
 
         } catch (Throwable e) {

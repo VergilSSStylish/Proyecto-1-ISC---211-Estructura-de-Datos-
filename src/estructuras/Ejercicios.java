@@ -63,24 +63,31 @@ public class Ejercicios {
 
     }
     // Control de Tráfico Aéreo 
-    public static Lista<String> procesarControlAereo(Cola<String> colaAproximacion, int capacidad) throws Exception {
-        Pila<String> pilaPlataforma = new Pila<>();
-        Lista<String> bitacoraLista = new Lista<>();
-
-        // quita de la cola y las ingresa en la pila
-        while (!colaAproximacion.VACIO()) {
+    // Control de Trafico aereo
+    public static void registrarAvionPlataforma(Cola<String> colaAproximacion, Pila<String> pilaPlataforma) throws Exception {
+        if (!colaAproximacion.VACIO()) {
             String avion = colaAproximacion.FRENTE();
             colaAproximacion.QUITA_DE_COLA();
             pilaPlataforma.METE(avion);
+            System.out.println("> " + avion + " ha sido registrado exitosamente.");
+        } else {
+            System.out.println("No hay más aviones en la cola de aproximación.");
         }
+    }
 
-        // Se ingresan en la lista que funciona como bitacora
+    // Generar la bitácora final en Lista a partir de lo que está en la Pila, cuando tú lo pidas
+    public static Lista<String> generarBitacora(Pila<String> pilaPlataforma) throws Exception {
+        Lista<String> bitacoraLista = new Lista<>();
+
+        // Usamos una pila temporal para no alterar el orden original si se requiere,
+        // o vaciamos la plataforma directamente hacia la lista como bitácora de aterrizajes.
         while (!pilaPlataforma.VACIA()) {
             String avionDespachado = pilaPlataforma.SACA();
-            bitacoraLista.INSERTA(avionDespachado, bitacoraLista.fin());
+                bitacoraLista.INSERTA(avionDespachado, bitacoraLista.fin());
         }
 
         return bitacoraLista;
     }
-    
+
+
 }
