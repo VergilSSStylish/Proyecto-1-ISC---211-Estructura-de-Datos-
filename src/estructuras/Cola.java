@@ -37,4 +37,8 @@ public class Cola <T> {
         }
         listaInterna.SUPRIME(listaInterna.PRIMERO());
     }
+
+    public void listar(){
+        listaInterna.listar();
+    }
 }
